@@ -1,0 +1,50 @@
+# AegisPass - Requirements
+
+## Runtime Requirements
+This is a static web application that runs entirely in the browser.
+No installation or dependencies are required.
+
+## Browser Compatibility
+- Chrome/Edge 90+
+- Firefox 88+
+- Safari 14+
+- Opera 76+
+
+## Required Browser Features
+- ES6 JavaScript support
+- Canvas API
+- LocalStorage API
+- CSS Grid and Flexbox
+
+## Development Dependencies (Optional)
+If you want to run a local development server:
+
+### Python (Option 1)
+```bash
+python -m http.server 8000
+```
+Requires: Python 3.x
+
+### Node.js (Option 2)
+```bash
+npx http-server
+```
+Requires: Node.js 12+
+
+## External Resources (CDN)
+- Ionicons 7.1.0 (loaded via CDN)
+- Google Fonts - Outfit (loaded via CDN)
+
+## Notes
+- No backend server required
+- No database required
+- No build process required
+- Simply open index.html in any modern browser
+
+---
+
+**Previous Python Version Dependencies (Deprecated)**
+The old Streamlit version required:
+- streamlit
+
+This has been replaced with a pure HTML/CSS/JS implementation.

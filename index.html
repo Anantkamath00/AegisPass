@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AegisPass | Advanced Strength Meter</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for neat iconography -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- Dynamic Animated Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <header>
+            <h1>AegisPass</h1>
+            <p class="subtitle">Next-Gen Password Security Analysis</p>
+        </header>
+
+        <div class="input-group">
+            <div class="password-wrappers">
+                <ion-icon name="lock-closed-outline" class="icon-lock"></ion-icon>
+                <input type="password" id="passwordInput" placeholder="Enter your password..." autocomplete="off">
+                <div class="toggle-password" id="togglePassword">
+                    <ion-icon name="eye-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="strength-meter">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="strength-text" id="strengthText">Enter Password</div>
+            </div>
+        </div>
+
+        <div class="requirements">
+            <span class="req-tag" id="req-length">8+ Chars</span>
+            <span class="req-tag" id="req-upper">ABC</span>
+            <span class="req-tag" id="req-lower">abc</span>
+            <span class="req-tag" id="req-num">123</span>
+            <span class="req-tag" id="req-spec">#@!</span>
+        </div>
+
+        <div class="actions">
+            <button class="btn" id="generateBtn">
+                <ion-icon name="shuffle-outline"></ion-icon> Generate
+            </button>
+            <button class="btn" id="settingsBtn" title="Generation Options">
+                <ion-icon name="settings-outline"></ion-icon>
+            </button>
+            <button class="btn btn-primary" id="saveBtn">
+                <ion-icon name="save-outline"></ion-icon> Save to Diary
+            </button>
+        </div>
+
+        <!-- Password Generation Options Panel -->
+        <div class="gen-options" id="genOptions">
+            <div class="option-header">
+                <h4><ion-icon name="construct-outline"></ion-icon> Generation Settings</h4>
+            </div>
+
+            <div class="option-item">
+                <label for="lengthSlider">Password Length: <span id="lengthValue">16</span></label>
+                <input type="range" id="lengthSlider" min="8" max="32" value="16" class="slider">
+            </div>
+
+            <div class="option-item">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="includeUpper" checked>
+                    <span>Uppercase (A-Z)</span>
+                </label>
+            </div>
+
+            <div class="option-item">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="includeLower" checked>
+                    <span>Lowercase (a-z)</span>
+                </label>
+            </div>
+
+            <div class="option-item">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="includeNumbers" checked>
+                    <span>Numbers (0-9)</span>
+                </label>
+            </div>
+
+            <div class="option-item">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="includeSymbols" checked>
+                    <span>Symbols (!@#$%^&*)</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="diary-section" id="diarySection">
+            <div class="diary-header">
+                <h3><ion-icon name="journal-outline"></ion-icon> Password Diary</h3>
+                <button class="btn" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;" id="clearDiary">Clear</button>
+            </div>
+            <div class="diary-list" id="diaryList">
+                <!-- Items added dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Developed by <a href="https://github.com/AnanthKamth">@Ananth Kamth</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
